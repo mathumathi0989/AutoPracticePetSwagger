@@ -3,14 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Test" >
     <classes>
-<class name = "Selenium.petSwagger.browserLaunch">
-</class>
- <class name="Selenium.petSwagger.test1"> 
- </class>
-<class name = "Selenium.petSwagger.test2">
-</class>
- <class name="Selenium.petSwagger.test2_API"> 
- </class>
+<class name = "Selenium.petSwagger.browserLaunch"> </class>
+ <class name="Selenium.petSwagger.test1"> </class>
+<class name = "Selenium.petSwagger.test2"> </class>
+ <class name="Selenium.petSwagger.test2_API"> </class>
+<class name="Selenium.petSwagger.test3_API"> </class>
 </classes>
  	 </test> <!-- Test -->
 </suite> <!-- Suite -->
