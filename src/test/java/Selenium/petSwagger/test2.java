@@ -7,20 +7,17 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class test2  {
+public class test2 extends base {
 
-	public WebDriver driver;
+//	public WebDriver driver;
 	
 	test1 t = new test1();
+	public WebDriver driver;
+
 	
-	public test2() throws Exception {
-		this.driver = base.launch() ;
-		
-	}
-	
-	@Test(dependsOnMethods= {"addPet"}, priority=2)
+	@Test()
 	public void findPet() throws Exception {
-		
+		driver = base.driver;
 	
 		System.out.println("apet id is " +t.pet_id);
 		
@@ -34,13 +31,13 @@ public class test2  {
 		
 		
 	}
-	@Test(priority=2,dependsOnMethods= "findPet")
+	@Test(dependsOnMethods= "findPet")
 	public void responseBodyVerify() throws Exception {
 		Thread.sleep(2000);
 		String resStatus = driver.findElement(By.xpath("//table[@class='responses-table live-responses-table']/tbody/tr/td")).getText();
-		System.out.println(resStatus);
+		System.out.println("Without API" +resStatus);
 		String resBody = driver.findElement(By.xpath("//*[@class='microlight']/code[@class='language-json']")).getText();
-		System.out.println(resBody);
+		System.out.println("Without API is"+resBody);
 	
 	}
 	

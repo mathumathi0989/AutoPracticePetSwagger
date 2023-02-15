@@ -12,29 +12,20 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class test2_API extends test1 {
+public class test2_API {
 
-
-	public test2_API() throws Exception {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
+test1 te = new test1();
 
 	@Test
 	public void findPet() throws Exception {
-		
-		String respo = given().log().all().baseUri("https://petstore.swagger.io/v2/pet/"+pet_id+"").contentType("application/json").queryParam("petID", pet_id)
+		String respo = given().baseUri("https://petstore.swagger.io/v2/pet/"+ te.pet_id+"").contentType("application/json")
 		.when().get().then().log().all().extract().response().asString();
 	
 		JsonPath jpath = new JsonPath(respo);
 		
 		int act_ID = jpath.get("id");
 		String actual_ID = Integer.toString(act_ID);
-		System.out.println("actual id " +actual_ID);
-		System.out.println("pet id is "+pet_id);
-		Assert.assertEquals(actual_ID, pet_id);
+		Assert.assertEquals(actual_ID, te.pet_id);
 		
 		
 	}

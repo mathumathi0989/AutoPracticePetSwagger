@@ -15,16 +15,12 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class test1 extends base {
+public class test1 {
 
-	 public WebDriver driver = null;
-	public String data = "mathu123";
-	public  String pet_id ;
+	 public WebDriver driver;
+	public String data = "mathumathi";
+	public static String pet_id ;
 
-	public test1() throws Exception {
-		this.driver = base.launch() ;
-		
-	}
 
 	
 	
@@ -32,6 +28,7 @@ public class test1 extends base {
 	public void addPet() throws JsonMappingException, Exception {
 		Random rand = new Random();
 		int random = rand.nextInt(100)+1;
+		driver = base.driver;
 		driver.findElement(By.xpath("//*[@id='operations-pet-addPet']//button/span[@class='opblock-summary-method']")).click();
 		driver.findElement(By.xpath("//*[@id='operations-pet-addPet']/div[@class='no-margin']//following-sibling::div[@class='try-out']")).click();
 		
@@ -70,11 +67,11 @@ public class test1 extends base {
 	public void responseBodyVerify() throws Exception {
 		Thread.sleep(2000);
 		String resStatus = driver.findElement(By.xpath("//table[@class='responses-table live-responses-table']/tbody/tr/td")).getText();
-		System.out.println(resStatus);
+		System.out.println("Response status of created pet is "+resStatus);
 		String resBody = driver.findElement(By.xpath("//*[@class='microlight']/code[@class='language-json']")).getText();
-		System.out.println(resBody);
+		System.out.println("Response body of created pet is " + resBody);
 		pet_id = driver.findElement(By.xpath("//*[@class='language-json']/span[5]")).getText();
-		System.out.println(pet_id);
+		System.out.println("Petswagger created ID " +pet_id);
 	}
 	
 	
