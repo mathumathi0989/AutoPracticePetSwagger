@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -14,8 +15,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
-public class test1 {
+@Listeners(org.testng.reporters.EmailableReporter.class)
+public class addPetTest {
 
 	 public WebDriver driver;
 	public String data = "mathumathi";

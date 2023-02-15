@@ -2,8 +2,10 @@ package Selenium.petSwagger;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
-public class browserLaunch extends base{
+@Listeners(org.testng.reporters.EmailableReporter.class)
+public class browserLaunchTest extends base{
 
 	@BeforeSuite
 	public void browser() {

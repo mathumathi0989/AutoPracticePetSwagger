@@ -2,15 +2,17 @@ package Selenium.petSwagger;
 import static io.restassured.RestAssured.given;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.google.gson.Gson;
 
 import POJO.deletePOJO;
 
-public class test3_API {
+@Listeners(org.testng.reporters.EmailableReporter.class)
+public class deletePetAPITest {
 
-	test1 te = new test1();
+	addPetTest te = new addPetTest();
 	
 	@Test
 	public void removePet() {
@@ -19,7 +21,7 @@ public class test3_API {
 		.when().delete().as(deletePOJO.class);
 		
 		int code = repo.getCode();
-		Assert.assertEquals(code, 200);
+		Assert.assertEquals(code, 2000);
 		
 		repo.getType();
 		

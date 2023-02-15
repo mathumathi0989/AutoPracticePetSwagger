@@ -3,15 +3,17 @@ package Selenium.petSwagger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class test2 extends base {
+@Listeners(org.testng.reporters.EmailableReporter.class)
+public class getPetTest extends base {
 
 //	public WebDriver driver;
 	
-	test1 t = new test1();
+	addPetTest t = new addPetTest();
 	public WebDriver driver;
 
 	
