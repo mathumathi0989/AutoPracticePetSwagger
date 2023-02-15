@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Selenium.petSwagger.test1">
+      <class name="Selenium.petSwagger.test2">
         <methods>
-          <include name="addPet"/>
-          <include name="launch"/>
+          <include name="findPet"/>
         </methods>
-      </class> <!-- Selenium.petSwagger.test1 -->
+      </class> <!-- Selenium.petSwagger.test2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
