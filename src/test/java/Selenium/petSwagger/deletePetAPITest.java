@@ -21,7 +21,7 @@ public class deletePetAPITest {
 		.when().delete().as(deletePOJO.class);
 		
 		int code = repo.getCode();
-		Assert.assertEquals(code, 2000);
+		Assert.assertEquals(code, 200);
 		
 		repo.getType();
 		

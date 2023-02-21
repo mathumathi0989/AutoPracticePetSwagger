@@ -24,7 +24,7 @@ public class getPetTest extends base {
 		System.out.println("apet id is " +t.pet_id);
 		
 		driver.findElement(By.xpath("//*[@class='opblock-summary opblock-summary-get']/button/span[@data-path='/pet/{petId}']//preceding-sibling::span")).click();
-		driver.findElement(By.xpath("//div[@class='try-out']")).click();
+		driver.findElement(By.xpath("//div[@id='operations-pet-getPetById']//div[@class='try-out']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//table[@class='parameters']/tbody/tr/td[2]/input")).sendKeys(t.pet_id);
 		driver.findElement(By.xpath("//div[@class='execute-wrapper']/button")).click();
